@@ -6,11 +6,11 @@ function mostrar()
     var contadorNeg=0;
     var contadorCeros=0;
     var contadorPares=0;
-    var promPos;
-    var promNeg;
+    var promPos= 0;
+    var promNeg= 0;
     var diferencia;
     var numero;
-    var respuesta='s';
+    var respuesta;
     do{ numero= parseInt(prompt("Ingrese un numero:"));
     while(isNaN(numero)){
         numero=parseInt(prompt("No es un numero, reingrese:"));
@@ -19,7 +19,7 @@ function mostrar()
         contadorNeg= contadorNeg + 1;
         acumuladorNeg=acumuladorNeg + numero;
 
-    }  if(numero > 0){
+    } else if(numero > 0){
         contadorPos= contadorPos + 1;
         acumuladorPos= acumuladorPos + numero;
 
@@ -31,9 +31,12 @@ function mostrar()
     
 
     } while(respuesta == 's');
+    if(contadorPos != 0 ){
      promPos= acumuladorPos / contadorPos;
+    } if(contadorNeg != 0 ){
      promNeg= acumuladorNeg / contadorNeg;
      diferencia= acumuladorPos + acumuladorNeg;
+    }
 
      document.write("La suma de los negativos es: "+ acumuladorNeg + "<br>" )
      document.write("La suma de los positivos es: "+ acumuladorPos + "<br>")
